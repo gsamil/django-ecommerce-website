@@ -49,9 +49,20 @@
 
 ## 2. Project Configuration
 
-### Create Models
+#### Create Models
 
 - This is going to be everthing that defines the logic of storing an order, process of adding an item to an order.
+```
+>> python manage.py makemigrations
+>> python manage.py migrate
+```
+
+#### Add an hmtl template
+- [bootstrap ecommerce template](https://mdbootstrap.com/freebies/jquery/e-commerce/) will be added.
+- All of the static files will be moved in static_in_env folder.
+- All html files will be moved in templates.
+- Add static key to all items and hrefs.
+- I didn't include static files, dowload them and copy under ./static_in_env
 
 ## References:
 
