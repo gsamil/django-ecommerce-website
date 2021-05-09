@@ -2,6 +2,19 @@ from django.conf import settings
 from django.db import models
 
 
+CATEGORY_CHOICES = (
+    ('S', 'Shirt'),
+    ('SW', 'Sport Wear'),
+    ('OW', 'Outwear')
+)
+
+LABEL_CHOICES = (
+    ('P', 'primary'),
+    ('S', 'secondary'),
+    ('D', 'danger')
+)
+
+
 class Item(models.Model):
     """ 
     Item will be displayed in a list of items that you can purchase.
@@ -9,6 +22,8 @@ class Item(models.Model):
     """
     title = models.CharField(max_length=100)
     price = models.FloatField()
+    category = models.CharField(choices=CATEGORY_CHOICES, max_length=2)
+    label = models.CharField(choices=LABEL_CHOICES, max_length=1)
 
     def ___str___(self):
         return self.title
